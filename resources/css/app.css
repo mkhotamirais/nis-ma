@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply scroll-smooth;
+}
+html,
+body {
+    @apply font-nunito;
+}
+
+.container {
+    @apply max-w-6xl mx-auto px-4 h-full md:px-8;
+}
+
+.section {
+    @apply py-12;
+}
+
+.section-hero {
+    @apply bg-emerald-800 py-12;
+}
+
+.btn {
+    @apply rounded-lg bg-amber-300 hover:bg-amber-400 py-2 px-4 lg:px-5 lg:py-3 transition-all;
+}
+
+h1.title {
+    @apply text-4xl font-bold text-white;
+}
+
+h2.title {
+    @apply text-emerald-700 text-3xl font-bold mb-2;
+}
+
+h2.footer-title {
+    @apply text-lg text-amber-300 font-bold mb-4;
+}
+
+article.title-content {
+    @apply scroll-mt-16 pt-4 max-w-4xl mb-8;
+}
+
+p.content {
+    @apply leading-relaxed text-gray-500;
+}
+
+p.title-desc {
+    @apply text-lg italic;
+}
+
+h3.title-accent {
+    @apply text-2xl font-semibold mb-2;
+}
