@@ -62,7 +62,7 @@
                     </nav>
                 </div>
                 {{-- mobile nav --}}
-                <div x-data="{ open: true }" class="flex lg:hidden">
+                <div id="mobile-nav" x-data="{ open: false }" class="flex lg:hidden">
                     <button type="button" x-on:click="open = !open" :class="open ? 'rotate-90' : ''"
                         class="transition-all text-white">
                         <x-heroicon-m-bars-3 x-show="!open" />
@@ -72,13 +72,15 @@
                         class="fixed inset-0 bg-black/50 transition-all duration-500">
                         <nav x-on:click="(e) => e.stopPropagation()"
                             :class="open ? 'translate-x-0' : '-translate-x-full'"
-                            class="w-[80%] h-full bg-green-700/90 border-r border-emerald-800 transition-all duration-300 p-4">
+                            class="overflow-y-scroll w-[85%] sm:w-80 h-full bg-emerald-700/85 border-r border-emerald-800 transition-all duration-300 p-8">
                             <x-logo />
+                            <br>
+                            <hr>
                             <div class="flex flex-col mt-4">
                                 @foreach (config('common.header.menu') as $menu)
                                     <div x-data="{ openMobileMenu: false }" class="relative group">
                                         <a href="{{ $menu['href'] }}" x-on:click="openMobileMenu = !openMobileMenu"
-                                            class="py-3 hover:text-amber-300 text-white flex justify-between items-center">
+                                            class="border-b py-3 hover:text-amber-300 text-white flex justify-between items-center">
                                             <span>{{ $menu['label'] }}</span>
                                             @if (isset($menu['submenu']))
                                                 <div :class="openMobileMenu ? 'rotate-180' : ''">
@@ -88,7 +90,7 @@
                                             @endif
                                         </a>
                                         @if (isset($menu['submenu']))
-                                            <div x-show="openMobileMenu" class="flex flex-col pl-2">
+                                            <div x-show="openMobileMenu" class="flex flex-col pl-2 mt-2">
                                                 @foreach ($menu['submenu'] as $submenu)
                                                     <a href="{{ $submenu['href'] }}"
                                                         class="text-white py-2 hover:text-amber-300">{{ $submenu['label'] }}</a>
@@ -100,6 +102,9 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                <a href="{{ route('contact') }}"
+                                    class="block bg-amber-300 hover:bg-amber-400 py-3 px-4 rounded-xl transition-all text-black font-bold text-center mt-8">Hubungi
+                                    Kami</a>
                             </div>
                         </nav>
                     </div>
@@ -109,8 +114,8 @@
     </header>
     {{-- main --}}
     <main class="grow">{{ $slot }}</main>
-    <a href="https://wa.me/6287821395680" class="fixed bottom-8 right-8 text-green-600">
-        <x-fab-whatsapp class="size-16" />
+    <a href="https://wa.me/6287821395680" class="fixed bottom-8 right-8 text-green-600 !z-50">
+        <x-fab-whatsapp class="size-14" />
     </a>
     {{-- footer --}}
     <footer class="border-t pt-12 flex bg-emerald-700 *:text-white">

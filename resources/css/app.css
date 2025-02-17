@@ -28,6 +28,10 @@ body {
     @apply rounded-lg bg-amber-300 hover:bg-amber-400 py-2 px-4 lg:px-5 lg:py-3 transition-all;
 }
 
+#mobile-nav nav::-webkit-scrollbar {
+    @apply hidden;
+}
+
 h1.title {
     @apply text-4xl font-bold text-white;
 }

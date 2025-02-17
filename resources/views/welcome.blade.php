@@ -10,7 +10,7 @@
                     </h1>
                     <p class="text-xl lg:text-2xl text-white italic">{{ config('common.home.hero.moto') }}</p>
                 </div>
-                <div class="flex gap-4">
+                <div class="flex flex-col md:flex-row gap-4 w-fit text-center">
                     <a href="{{ route('ppdb') }}"
                         class="btn font-bold">{{ config('common.home.hero.register-btn') }}</a>
                     <a href="{{ route('tentang') }}"
@@ -59,10 +59,11 @@
                 <p class="title-desc text-white">{{ config('common.home.reason.description') }}
                 </p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                 @foreach (config('common.home.reason.reasons') as $why)
-                    <div class="rounded-xl bg-white overflow-hidden">
-                        <img src="{{ $why['image'] }}" alt="{{ $why['title'] }}">
+                    <div class="rounded-2xl bg-white overflow-hidden">
+                        <img src="{{ $why['image'] }}" alt="{{ $why['title'] }}"
+                            class="w-full object-cover object-center">
                         <div class="p-6 text-center">
                             <h3 class="text-xl font-bold capitalize mb-4">{{ $why['title'] }}</h3>
                             <p>{{ $why['description'] }}</p>
@@ -79,11 +80,11 @@
                 <h2 class="title">{{ config('common.home.news.title') }}</h2>
                 <p class="title-desc">{{ config('common.home.news.description') }}</p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            {{-- <div class="grid grid-cols-3 gap-4">
                 <div>berita 1</div>
                 <div>berita 2</div>
                 <div>berita 3</div>
-            </div>
+            </div> --}}
         </div>
     </section>
     {{-- galery --}}
@@ -93,15 +94,15 @@
                 <h2 class="title">{{ config('common.home.galery.title') }}</h2>
                 <p class="title-desc">{{ config('common.home.galery.description') }}</p>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            {{-- <div class="grid grid-cols-3 gap-4">
                 <div>galery 1</div>
                 <div>galery 2</div>
                 <div>galery 3</div>
-            </div>
+            </div> --}}
         </div>
     </section>
     {{-- contact --}}
-    <section class="section">
+    {{-- <section class="section">
         <div class="container">
             <div class="mb-8">
                 <h2 class="title">{{ config('common.home.contact.title') }}</h2>
@@ -113,5 +114,5 @@
                 <div>contact 3</div>
             </div>
         </div>
-    </section>
+    </section> --}}
 </x-layout>

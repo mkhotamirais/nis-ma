@@ -85,15 +85,15 @@ return [
             "title" => "Alasan Memilih Nurul Iman",
             "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.",
             "reasons" => [
-                ["title" => "alasah 1", "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.", "image" => "https://images.pexels.com/photos/1310102/pexels-photo-1310102.jpeg?auto=compress&cs=tinysrgb&w=600"],
+                ["title" => "alasah 1", "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus lorem dolor sit amet consectetur adipisicing elit. Quos, natus.", "image" => "https://images.pexels.com/photos/1310102/pexels-photo-1310102.jpeg?auto=compress&cs=tinysrgb&w=600"],
                 ["title" => "alasah 2", "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.", "image" => "https://images.pexels.com/photos/1310102/pexels-photo-1310102.jpeg?auto=compress&cs=tinysrgb&w=600"],
                 ["title" => "alasah 3", "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.", "image" => "https://images.pexels.com/photos/1310102/pexels-photo-1310102.jpeg?auto=compress&cs=tinysrgb&w=600"],
             ],
             "numbers" => [
-                ["number" => "100", "name" => "Alumni"],
                 ["number" => "100", "name" => "Siswa"],
-                ["number" => "100", "name" => "Pendidik"],
-                ["number" => "100", "name" => "Pendidikan"],
+                ["number" => "50", "name" => "Tenaga Pendidik"],
+                ["number" => "30", "name" => "Tenaga Pendidikan"],
+                ["number" => "500", "name" => "Alumni"],
             ]
         ],
         "galery" => [
