@@ -2,54 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achievement;
+use App\Models\Agenda;
+use App\Models\Galery;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
     public function index()
     {
-        return view("welcome");
-    }
-
-    public function ppdb()
-    {
-        return view("pages.ppdb");
-    }
-
-    public function contact()
-    {
-        return view("pages.contact");
-    }
-
-    // Profile
-    public function sambutan()
-    {
-        return view('pages.profile.sambutan');
-    }
-
-    public function guru_staff()
-    {
-        return view('pages.profile.guru-staff');
-    }
-
-    public function tentang()
-    {
-        return view('pages.profile.tentang');
+        $latestNews = News::latest()->take(4)->get();
+        $latestGaleries = Galery::latest()->take(8)->get();
+        return view("welcome", compact('latestNews', 'latestGaleries'));
     }
 
     // publikasi
+    public function prestasi()
+    {
+        $achievements = Achievement::latest()->paginate(8);
+        return view('pages.publikasi.prestasi', compact('achievements'));
+    }
     public function agenda()
     {
-        return view('pages.publikasi.agenda');
+        $agendas = Agenda::orderBy('date')->paginate(8);
+        return view('pages.publikasi.agenda', compact('agendas'));
     }
 
     public function berita()
     {
-        return view('pages.publikasi.berita');
+        $news = News::latest()->paginate(8);
+        return view('pages.publikasi.berita', compact('news'));
     }
 
     public function galery()
     {
-        return view('pages.publikasi.galery');
+        $galeries = Galery::latest()->paginate(8);
+        return view('pages.publikasi.galery', compact('galeries'));
     }
 }

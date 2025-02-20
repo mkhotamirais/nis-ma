@@ -1,16 +1,14 @@
 <?php
 
 return [
-    //     program: ekstrakulikuler
-    // kalender akademik
-    // kebijakan sekolah
-    // Akademik
-    // Kesiswaan
-    // Keasramaan
-    // Humas
-    // Sarana dan Prasarana
-    // Tata Usaha
     "header" => [
+        "menuadmin" => [
+            ["href" => "/dashboard", "label" => "Dashboard", "route" => "dashboard"],
+            ["href" => "/news", "label" => "Berita", "route" => "news.index"],
+            ["href" => "/agendas", "label" => "Agenda", "route" => "agendas.index"],
+            ["href" => "/galeries", "label" => "Galeri", "route" => "galeries.index"],
+            ["href" => "/achievements", "label" => "Prestasi", "route" => "achievements.index"],
+        ],
         "menu" => [
             ["href" => "/ppdb", "label" => "PPDB"],
             ["href" => "/", "label" => "beranda"],
@@ -19,7 +17,8 @@ return [
                 "label" => "profile",
                 "submenu" => [
                     ["href" => "/sambutan", "label" => "Sambutan Kepala Madrasah"],
-                    ["href" => "/tentang", "label" => "Tentang Sekolah"],
+                    ["href" => "/sejarah", "label" => "Sejarah"],
+                    ["href" => "/visi-misi-tujuan", "label" => "Visi, Misi, dan Tujuan"],
                     ["href" => "/guru-staff", "label" => "Guru dan Tenaga Pendidik"],
                 ]
             ],
@@ -27,6 +26,7 @@ return [
                 "href" => "#",
                 "label" => "Publikasi",
                 "submenu" => [
+                    ["href" => "/prestasi", "label" => "Prestasi"],
                     ["href" => "/agenda", "label" => "Agenda"],
                     ["href" => "/berita", "label" => "Berita"],
                     ["href" => "/galery", "label" => "Galery"],
@@ -64,7 +64,7 @@ return [
     ],
     "home" => [
         "hero" => [
-            "welcome" => "Selamat Datang Di MA Nurul Iman Sindangkerta",
+            "welcome" => "Selamat Datang di MA Nurul Iman Sindangkerta",
             "moto" => "Moto Sekolah Nurul Iman",
             "register-btn" => "Pendaftaran",
             "about-btn" => "Tentang Sekolah",
@@ -74,16 +74,16 @@ return [
             "principal-name" => "Jaeni Marjuki, M.Ag",
             "speech" => [
                 "Assalamualaikum Warahmatullahi Wabarakatuh",
-                "Alhamdulillah, segala puji bagi Allah SWT yang telah memberikan kita nikmat iman, ilmu, dan kesehatan sehingga kita dapat berkumpul dalam kesempatan yang berbahagia ini. Shalawat serta salam senantiasa kita haturkan kepada Nabi Muhammad SAW, semoga kita semua mendapat syafaatnya di yaumul akhir nanti.",
-                "Saya selaku Kepala Sekolah Nurul Iman mengucapkan selamat datang kepada seluruh hadirin, baik para guru, siswa, orang tua, serta tamu undangan yang telah berkenan hadir. Sekolah ini senantiasa berkomitmen untuk menjadi lembaga pendidikan yang tidak hanya unggul dalam ilmu pengetahuan, tetapi juga menanamkan nilai-nilai akhlak dan keislaman dalam setiap aspek kehidupan.",
-                "Kami percaya bahwa pendidikan adalah kunci utama dalam membentuk generasi yang cerdas, berkarakter, dan berdaya saing. Oleh karena itu, kami terus berupaya meningkatkan kualitas pembelajaran, baik dari segi akademik maupun non-akademik, agar para siswa dapat berkembang secara maksimal sesuai dengan potensinya.",
+                // "Alhamdulillah, segala puji bagi Allah SWT yang telah memberikan kita nikmat iman, ilmu, dan kesehatan sehingga kita dapat berkumpul dalam kesempatan yang berbahagia ini. Shalawat serta salam senantiasa kita haturkan kepada Nabi Muhammad SAW, semoga kita semua mendapat syafaatnya di yaumul akhir nanti.",
+                // "Saya selaku Kepala Sekolah Nurul Iman mengucapkan selamat datang kepada seluruh hadirin, baik para guru, siswa, orang tua, serta tamu undangan yang telah berkenan hadir. Sekolah ini senantiasa berkomitmen untuk menjadi lembaga pendidikan yang tidak hanya unggul dalam ilmu pengetahuan, tetapi juga menanamkan nilai-nilai akhlak dan keislaman dalam setiap aspek kehidupan.",
+                // "Kami percaya bahwa pendidikan adalah kunci utama dalam membentuk generasi yang cerdas, berkarakter, dan berdaya saing. Oleh karena itu, kami terus berupaya meningkatkan kualitas pembelajaran, baik dari segi akademik maupun non-akademik, agar para siswa dapat berkembang secara maksimal sesuai dengan potensinya.",
                 // "Harapan kami, dengan adanya kerja sama antara pihak sekolah, orang tua, dan masyarakat, kita dapat menciptakan lingkungan belajar yang kondusif serta melahirkan generasi yang tidak hanya cerdas secara intelektual, tetapi juga memiliki akhlak yang mulia dan siap menghadapi tantangan zaman.",
-                "Akhir kata, semoga Allah SWT senantiasa meridhoi langkah kita dalam menuntut ilmu dan membangun pendidikan yang lebih baik. Terima kasih atas dukungan dan kepercayaan yang diberikan kepada Nurul Iman.",
+                // "Akhir kata, semoga Allah SWT senantiasa meridhoi langkah kita dalam menuntut ilmu dan membangun pendidikan yang lebih baik. Terima kasih atas dukungan dan kepercayaan yang diberikan kepada Nurul Iman.",
             ]
         ],
         "reason" => [
-            "title" => "Alasan Memilih Nurul Iman",
-            "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.",
+            "title" => "Mengapa MA Nurul Iman",
+            "description" => "Sekolah yang sangat menjunjung tinggi sopan santun dan mengutamakan akhlak yang baik menghindari akhlak tercela",
             "reasons" => [
                 ["title" => "alasah 1", "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus lorem dolor sit amet consectetur adipisicing elit. Quos, natus.", "image" => "https://images.pexels.com/photos/1310102/pexels-photo-1310102.jpeg?auto=compress&cs=tinysrgb&w=600"],
                 ["title" => "alasah 2", "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, natus.", "image" => "https://images.pexels.com/photos/1310102/pexels-photo-1310102.jpeg?auto=compress&cs=tinysrgb&w=600"],

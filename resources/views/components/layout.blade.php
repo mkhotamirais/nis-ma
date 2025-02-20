@@ -1,3 +1,10 @@
+@props([
+    'meta' => [
+        'title' => config('meta.home.title'),
+        'description' => config('meta.home.description'),
+    ],
+])
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nurul Iman Sindangkerta</title>
+
+    <title>{{ $meta['title'] ?? 'MA Nurul Iman Sindangkerta' }}</title>
+    <meta name="description" content="{{ $meta['description'] ?? 'MA Nurul Iman Sindangkerta Description' }}">
 
     <link rel="shortcut icon" href="{{ asset('storage/logo/favicon.ico') }}" type="image/x-icon">
 
@@ -114,7 +123,8 @@
     </header>
     {{-- main --}}
     <main class="grow">{{ $slot }}</main>
-    <a href="https://wa.me/6287821395680" class="fixed bottom-8 right-8 text-green-600 !z-50">
+    <a href="{{ config('common.common.links.wa-url-m-nur.href') }}"
+        class="fixed bottom-8 right-8 text-green-600 !z-50">
         <x-fab-whatsapp class="size-14" />
     </a>
     {{-- footer --}}
