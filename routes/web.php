@@ -14,8 +14,7 @@ Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/ppdb', 'pages.ppdb')->name('ppdb');
 
 // Profile
-Route::get('/sambutan', [PublicController::class, 'sambutan'])->name('sambutan');
-// Route::get('/guru-staff', [PublicController::class, 'guru_staff'])->name('guru-staff');
+Route::view('/sambutan', 'pages.profile.sambutan')->name('sambutan');
 Route::view('/guru-staff', 'pages.profile.guru-staff')->name('guru-staff');
 Route::view('/sejarah', 'pages.profile.sejarah')->name('sejarah');
 Route::view('/visi-misi-tujuan', 'pages.profile.visi-misi-tujuan')->name('visi-misi-tujuan');
