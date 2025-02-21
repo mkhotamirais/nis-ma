@@ -91,9 +91,9 @@ return [
             ],
             "numbers" => [
                 ["number" => "100", "name" => "Siswa"],
+                ["number" => "500", "name" => "Alumni"],
                 ["number" => "50", "name" => "Tenaga Pendidik"],
                 ["number" => "30", "name" => "Tenaga Pendidikan"],
-                ["number" => "500", "name" => "Alumni"],
             ]
         ],
         "galery" => [

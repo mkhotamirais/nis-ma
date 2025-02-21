@@ -72,9 +72,9 @@ class AchievementController extends Controller implements HasMiddleware
      */
     public function show(Achievement $achievement)
     {
-        $latestAchievement = Achievement::latest()->where('id', '!=', $achievement->id)->take(8)->get();
+        $latestAchievements = Achievement::latest()->where('id', '!=', $achievement->id)->take(8)->get();
 
-        return view('pages.publikasi.prestasi-show', compact('achievement', 'latestAchievement'));
+        return view('pages.publikasi.prestasi-show', compact('achievement', 'latestAchievements'));
     }
 
     /**

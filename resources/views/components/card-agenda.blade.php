@@ -2,7 +2,7 @@
 
 <div class="flex flex-col border rounded-xl overflow-hidden">
     <div class="grow bg-emerald-700 p-4">
-        <h2 class="title !text-xl !text-white text-center">{{ $item->title }}</h2>
+        <h2 class="title !text-xl !text-white text-center first:capitalize">{{ $item->title }}</h2>
     </div>
     <div class="bg-emerald-200 p-4">
         <p class="flex items-center gap-2 mb-2">

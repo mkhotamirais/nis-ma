@@ -20,7 +20,7 @@ class PublicController extends Controller
     // publikasi
     public function prestasi()
     {
-        $achievements = Achievement::latest()->paginate(8);
+        $achievements = Achievement::latest()->paginate(4);
         return view('pages.publikasi.prestasi', compact('achievements'));
     }
     public function agenda()
@@ -37,7 +37,7 @@ class PublicController extends Controller
 
     public function galery()
     {
-        $galeries = Galery::latest()->paginate(8);
+        $galeries = Galery::latest()->paginate(12);
         return view('pages.publikasi.galery', compact('galeries'));
     }
 }

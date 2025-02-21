@@ -13,7 +13,7 @@
                     <article class="text-content">{!! $news->content !!}</article>
                 </div>
                 <div class="w-64 min-w-full md:min-w-80 sticky top-24">
-                    <h2 class="title">Berita Lainnya</h2>
+                    <h2 class="title !mb-6">Berita Lainnya</h2>
                     <div class="space-y-8">
                         @foreach ($latestNews as $news)
                             <div class="grid grid-cols-3 gap-2">

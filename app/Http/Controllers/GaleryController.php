@@ -123,15 +123,15 @@ class GaleryController extends Controller implements HasMiddleware
      */
     public function destroy(Galery $galery)
     {
-        // // authorize
-        // Gate::authorize('modify', $news);
+        // authorize
+        Gate::authorize('modify', $galery);
 
-        // if ($news->banner) {
-        //     Storage::disk('public')->delete($news->banner);
-        // }
+        if ($galery->image) {
+            Storage::disk('public')->delete($galery->image);
+        }
 
-        // $news->delete();
+        $galery->delete();
 
-        // return back()->with('success', "$news->title berhasil dihapus");
+        return back()->with('success', "$galery->caption berhasil dihapus");
     }
 }

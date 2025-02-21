@@ -39,16 +39,16 @@
         </div>
     </section>
     {{-- sambutan --}}
-    <section class="section bg-gray-50">
+    <section class="section bg-white sm:bg-gray-50">
         <div class="container">
-            <article class="bg-white p-8 rounded-md shadow-md">
+            <article class="bg-white p-0 sm:p-8 rounded-md shadow-none sm:shadow-md">
                 <div class="mb-8">
                     <h2 class="title">{{ config('common.home.speech.title') }}</h2>
                     <h3 class="title-accent">{{ config('common.home.speech.principal-name') }}</h3>
                 </div>
                 <div class="">
-                    <img src="{{ asset('storage/images/kepala-sekolah-ni.webp') }}" alt="kepala sekolah"
-                        class="float-left w-40 mt-2 mr-4 mb-4 rounded-lg">
+                    {{-- <img src="{{ asset('storage/images/kepala-sekolah-ni.webp') }}" alt="kepala sekolah"
+                        class="float-left w-40 mt-2 mr-4 mb-4 rounded-lg"> --}}
                     <div class="">
                         @foreach (config('common.home.speech.speech') as $paragraph)
                             <p class="mb-2 text-gray-500">{{ $paragraph }}</p>

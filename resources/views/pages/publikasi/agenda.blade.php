@@ -11,6 +11,9 @@
                     <x-card-agenda :item="$item"></x-card-agenda>
                 @endforeach
             </article>
+            <div class="mt-8">
+                {{ $agendas->links() }}
+            </div>
         </div>
     </section>
 </x-layout>

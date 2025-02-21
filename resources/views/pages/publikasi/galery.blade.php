@@ -11,6 +11,9 @@
                     <x-card-galery :item="$item"></x-card-galery>
                 @endforeach
             </div>
+            <div class="mt-8">
+                {{ $galeries->links() }}
+            </div>
         </div>
     </section>
 </x-layout>

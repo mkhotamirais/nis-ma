@@ -7,7 +7,7 @@
         <a href="{{ route('agendas.create') }}" class="btn mb-4">Tambah</a>
 
         <article class="grid grid-cols-1 md:grid-cols-3 gap-2">
-            @foreach ($myAgendas as $item)
+            @foreach ($agendas as $item)
                 <x-card-agenda :item="$item">
                     <div class="flex gap-2">
                         <a href="{{ route('agendas.edit', $item->slug) }}"
