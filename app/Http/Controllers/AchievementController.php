@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Achievement;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
@@ -26,6 +27,8 @@ class AchievementController extends Controller implements HasMiddleware
      */
     public function index()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         $achievements = Achievement::latest()->paginate(8);
         $myAchievements = Achievement::where('user_id', Auth::id())->latest()->paginate(8);
 
@@ -37,6 +40,8 @@ class AchievementController extends Controller implements HasMiddleware
      */
     public function create()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         return view('admin.achievement.create');
     }
 
@@ -45,6 +50,8 @@ class AchievementController extends Controller implements HasMiddleware
      */
     public function store(Request $request)
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         // Validate
         $fields = $request->validate([
             'title' => 'required|max:255|unique:achievements',
@@ -63,7 +70,6 @@ class AchievementController extends Controller implements HasMiddleware
         Auth::user()->achievements()->create([...$fields, 'slug' => $slug, 'banner' => $path]);
 
         // Redirect
-        // return back()->with('success', 'Achievement created successfully');
         return redirect('/achievements')->with('success', 'Prestasi berhasil dibuat');
     }
 

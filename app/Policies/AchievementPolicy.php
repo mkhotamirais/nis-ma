@@ -17,7 +17,7 @@ class AchievementPolicy
     //  */
     // public function viewAny(User $user): bool
     // {
-    //     return false;
+    //     return false
     // }
 
     // /**

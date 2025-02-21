@@ -4,6 +4,7 @@ return [
     "header" => [
         "menuadmin" => [
             ["href" => "/dashboard", "label" => "Dashboard", "route" => "dashboard"],
+            ["href" => "/users", "label" => "Users", "route" => "users"],
             ["href" => "/news", "label" => "Berita", "route" => "news.index"],
             ["href" => "/agendas", "label" => "Agenda", "route" => "agendas.index"],
             ["href" => "/galeries", "label" => "Galeri", "route" => "galeries.index"],

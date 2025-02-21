@@ -2,8 +2,11 @@
     <section class="section">
         <div class="container">
             <article class="max-w-xl mx-auto">
-                <h1 class="title !text-black">login</h1>
-                <form action="{{ route('login') }}" method="POST" class="mt-8">
+                <h1 class="title !text- !mb-2">login</h1>
+                @if (session('failed'))
+                    <x-flash-msg message="{{ session('failed') }}" bg="bg-red-500"></x-flash-msg>
+                @endif
+                <form action="{{ route('login') }}" method="POST" class="mt-6">
                     @csrf
 
                     {{-- email --}}
@@ -33,7 +36,7 @@
                     </div>
 
                     {{-- submit --}}
-                    <button type="submit" class="btn ">Register</button>
+                    <button type="submit" class="btn ">Login</button>
 
                 </form>
             </article>

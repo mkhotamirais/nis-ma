@@ -47,8 +47,12 @@
                 <aside class="hidden lg:block w-56 h-full py-4">
                     <div>
                         @foreach (config('common.header.menuadmin') as $menu)
-                            <a href="{{ route($menu['route']) }}"
-                                class="block px-4 py-2 hover:bg-emerald-600 hover:text-white }}">{{ $menu['label'] }}</a>
+                            @if (Auth::user()->role === 'admin' ||
+                                    (Auth::user()->role === 'editor' && $menu['route'] !== 'users') ||
+                                    (Auth::user()->role === 'user' && $menu['route'] === 'dashboard'))
+                                <a href="{{ route($menu['route']) }}"
+                                    class="block px-4 py-2 hover:bg-emerald-600 hover:text-white }}">{{ $menu['label'] }}</a>
+                            @endif
                         @endforeach
                     </div>
                 </aside>
@@ -61,8 +65,12 @@
                         class="py-4 bg-white/90 w-56 transition-all duration-200">
                         <div>
                             @foreach (config('common.header.menuadmin') as $menu)
-                                <a href="{{ route($menu['route']) }}"
-                                    class="block px-4 py-2 hover:text-white hover:bg-emerald-600">{{ $menu['label'] }}</a>
+                                @if (Auth::user()->role === 'admin' ||
+                                        (Auth::user()->role === 'editor' && $menu['route'] !== 'users') ||
+                                        (Auth::user()->role === 'user' && $menu['route'] === 'dashboard'))
+                                    <a href="{{ route($menu['route']) }}"
+                                        class="block px-4 py-2 hover:text-white hover:bg-emerald-600">{{ $menu['label'] }}</a>
+                                @endif
                             @endforeach
                         </div>
                     </aside>

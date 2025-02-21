@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Galery;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
@@ -27,6 +28,8 @@ class GaleryController extends Controller implements HasMiddleware
      */
     public function index()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         $galeries = Galery::latest()->paginate(8);
         $myGaleries = Galery::where('user_id', Auth::id())->latest()->paginate(8);
         return view('admin.galery.index', compact('galeries', 'myGaleries'));
@@ -37,6 +40,8 @@ class GaleryController extends Controller implements HasMiddleware
      */
     public function create()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         return view('admin.galery.create');
     }
 
@@ -45,6 +50,8 @@ class GaleryController extends Controller implements HasMiddleware
      */
     public function store(Request $request)
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         // Validate
         $fields = $request->validate([
             'caption' => 'required|max:255|unique:galeries',

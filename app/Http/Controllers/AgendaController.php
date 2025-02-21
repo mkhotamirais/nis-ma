@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenda;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
@@ -25,6 +26,8 @@ class AgendaController extends Controller implements HasMiddleware
      */
     public function index()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         $agendas = Agenda::latest()->paginate(8);
         $myAgendas = Agenda::where('user_id', Auth::id())->latest()->paginate(8);
 
@@ -36,6 +39,8 @@ class AgendaController extends Controller implements HasMiddleware
      */
     public function create()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         return view('admin.agenda.create');
     }
 
@@ -44,6 +49,8 @@ class AgendaController extends Controller implements HasMiddleware
      */
     public function store(Request $request)
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         // Validate
         $fields = $request->validate([
             'title' => 'required|string|max:255|unique:agendas,title',

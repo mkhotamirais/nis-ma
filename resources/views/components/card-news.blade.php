@@ -6,7 +6,7 @@
         class="{{ $item->banner ? 'object-cover' : 'object-contain scale-90' }} h-56 sm:h-full w-full sm:w-56 z-40">
     <div class="">
         <a href="{{ route('news.show', $item->slug) }}" class="hover:underline">
-            <h3 class="title first:capitalize mt-4 sm:mt-0 !mb-2">{{ $item->title }}</h3>
+            <h3 class="title first-letter:capitalize mt-4 sm:mt-0 !mb-2">{{ $item->title }}</h3>
         </a>
         <p class="mb-2 text-sm text-gray-500">{{ $item->created_at->diffForHumans() }}</p>
         <div class="text-gray-700 grow">{!! Str::limit($item->content, 200) !!}</div>

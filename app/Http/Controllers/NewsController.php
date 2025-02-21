@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,8 @@ class NewsController extends Controller implements HasMiddleware
      */
     public function index()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         $news = News::latest()->paginate(8);
         $myNews = News::where('user_id', Auth::id())->latest()->paginate(8);
         return view('admin.news.index', compact('news', 'myNews'));
@@ -36,6 +39,8 @@ class NewsController extends Controller implements HasMiddleware
      */
     public function create()
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         return view('admin.news.create');
     }
 
@@ -44,6 +49,8 @@ class NewsController extends Controller implements HasMiddleware
      */
     public function store(Request $request)
     {
+        Gate::allowIf(fn(User $user) => $user->role === 'admin' || $user->role === 'editor');
+
         // Validate
         $fields = $request->validate([
             'title' => 'required|max:255|unique:news',
