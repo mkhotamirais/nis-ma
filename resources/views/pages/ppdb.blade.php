@@ -9,6 +9,7 @@
             <h2>prosedur dan persyaratan | brosur</h2>
             <div>
                 <h1>Persyaratan Administrasi</h1>
+                <a href="https://bit.ly/PPDBNI2025" type="button" class="btn">Daftar Sekarang</a>
                 <ul>
                     <li>Pas foto latar merah ukuran 2x3 dua buah | 3x4 dua buah | 4x6 dua buah</li>
                     <li>Fotokopi Kartu Pelajar</li>

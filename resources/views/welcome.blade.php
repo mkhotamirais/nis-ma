@@ -1,6 +1,6 @@
 <x-layout>
     {{-- hero --}}
-    <section class="h-[75vh] relative w-full bg-gradient-to-b from-black/30 to-black/60">
+    <section class="h-[75vh] relative w-full bg-gradient-to-b from-black/10 to-black/20">
         {{-- <img src="{{ asset('storage/images/pexels-school-hero.jpg') }}" alt="hero image"
             class="h-[75vh] absolute w-full object-cover object-center -z-10"> --}}
         {{-- <img src="{{ asset('storage/images/nis-hero-drone-blur.jpg') }}" alt="hero image"

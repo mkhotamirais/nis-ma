@@ -20,20 +20,34 @@
                     </div>
 
                     {{-- password --}}
-                    <div class="mb-3">
+                    <div x-data="{ showPassword: false }" class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-input @error('password') !border-red-300 @enderror"
-                            name="password" id="password" placeholder="********">
+                        <div class="relative">
+                            <input :type="showPassword ? 'text' : 'password'"
+                                class="form-input !pr-16 @error('password') !border-red-300 @enderror" name="password"
+                                id="password" placeholder="********">
+                            <button type="button" x-on:click="showPassword = !showPassword"
+                                class="absolute top-1/2 -translate-y-1/2 right-2 text-amber-700 font-semibold"
+                                x-text="showPassword ? 'Hide' : 'Show'">
+                            </button>
+                        </div>
                         @error('password')
                             <p class="error">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    {{-- remember me --}}
-                    <div class="mb-6 flex items-center gap-2">
-                        <input type="checkbox" name="remember" id="remember">
-                        <label for="remember" class="text-gray-600">Remember me</label>
+                    <div class="flex justify-between items-center mb-6">
+
+                        {{-- remember me --}}
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember" class="text-gray-600">Remember me</label>
+                        </div>
+                        {{-- forgot password --}}
+                        <a href="{{ route('password.request') }}" class="text-sm text-amber-700 hover:underline">Lupa
+                            password?</a>
                     </div>
+
 
                     {{-- submit --}}
                     <button type="submit" class="btn ">Login</button>

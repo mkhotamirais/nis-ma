@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,12 @@ Route::middleware('guest')->group(function () {
 
     Route::view('/login', 'admin.auth.login')->name('login');
     Route::post('/login', [AuthController::class, 'login']);
+
+    // forgot password
+    Route::view('/forgot-password', 'admin.auth.forgot-password')->name('password.request');
+    Route::post('/forgot-password', [ResetPasswordController::class, 'passwordEmail'])->name('password.email');
+    Route::get('/reset-password/{token}', [ResetPasswordController::class, 'passwordReset'])->name('password.reset');
+    Route::post('/reset-password', [ResetPasswordController::class, 'passwordUpdate'])->name('password.update');
 });
 
 // Route::middleware(['auth', RoleMiddleware::class . ':admin,editor,user'])->group(function () {

@@ -28,22 +28,40 @@
 
                     {{-- password --}}
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-input @error('password') !border-red-300 @enderror"
-                            name="password" id="password" placeholder="********">
-                        @error('password')
-                            <p class="error">{{ $message }}</p>
-                        @enderror
+                        <div x-data="{ showPassword: false }" class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="relative">
+                                <input :type="showPassword ? 'text' : 'password'"
+                                    class="form-input !pr-16 @error('password') !border-red-300 @enderror"
+                                    name="password" id="password" placeholder="********">
+                                <button type="button" x-on:click="showPassword = !showPassword"
+                                    class="absolute top-1/2 -translate-y-1/2 right-2 text-amber-700 font-semibold"
+                                    x-text="showPassword ? 'Hide' : 'Show'">
+                                </button>
+                            </div>
+                            @error('password')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
 
                     {{-- password_confirmation --}}
                     <div class="mb-6">
-                        <label for="password_confirmation" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-input @error('password') !border-red-300 @enderror"
-                            name="password_confirmation" id="password_confirmation" placeholder="********">
-                        @error('password_confirmation')
-                            <p class="error">{{ $message }}</p>
-                        @enderror
+                        <div x-data="{ showPassword: false }" class="mb-3">
+                            <label for="password_confirmation" class="form-label">Confirm Password</label>
+                            <div class="relative">
+                                <input :type="showPassword ? 'text' : 'password'"
+                                    class="form-input !pr-16 @error('password') !border-red-300 @enderror"
+                                    name="password_confirmation" id="password_confirmation" placeholder="********">
+                                <button type="button" x-on:click="showPassword = !showPassword"
+                                    class="absolute top-1/2 -translate-y-1/2 right-2 text-amber-700 font-semibold"
+                                    x-text="showPassword ? 'Hide' : 'Show'">
+                                </button>
+                            </div>
+                            @error('password')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
 
                     {{-- submit --}}
