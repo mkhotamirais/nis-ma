@@ -42,45 +42,46 @@
     {{-- main --}}
     <main x-data="{ openAside: false }" class="container grow min-h-full">
         <div class="flex grow h-full place-items-start items-start">
-            <div class="sticky top-16 z-50">
-                {{-- desktop sidebar --}}
-                <aside class="hidden lg:block w-56 h-full py-4">
-                    <div>
-                        @foreach (config('common.header.menuadmin') as $menu)
-                            @if (Auth::user()->role === 'admin' ||
-                                    (Auth::user()->role === 'editor' && $menu['route'] !== 'users') ||
-                                    (Auth::user()->role === 'user' && $menu['route'] === 'dashboard'))
-                                <a href="{{ route($menu['route']) }}"
-                                    class="block px-4 py-2 hover:bg-emerald-600 hover:text-white }}">{{ $menu['label'] }}</a>
-                            @endif
-                        @endforeach
-                    </div>
-                </aside>
-                {{-- mobile sidebar --}}
-                <div :class="openAside ? 'opacity-100 visible' : 'opacity-0 invisible'"
-                    class="flex lg:hidden fixed inset-0 top-16 bg-black/50 !z-50 transition-all duration-300"
-                    x-on:click="openAside = false">
-                    <aside x-on:click="(e) => e.stopPropagation()"
-                        :class="openAside ? 'translate-x-0' : '-translate-x-full'"
-                        class="py-4 bg-white/90 w-56 transition-all duration-200">
+            @if (Auth::user()->role !== 'user')
+                <div class="sticky top-16 z-50">
+                    {{-- desktop sidebar --}}
+                    <aside class="hidden lg:block w-56 h-full py-4">
                         <div>
                             @foreach (config('common.header.menuadmin') as $menu)
-                                @if (Auth::user()->role === 'admin' ||
-                                        (Auth::user()->role === 'editor' && $menu['route'] !== 'users') ||
-                                        (Auth::user()->role === 'user' && $menu['route'] === 'dashboard'))
+                                @if (Auth::user()->role === 'admin' || (Auth::user()->role === 'editor' && $menu['route'] !== 'users'))
                                     <a href="{{ route($menu['route']) }}"
-                                        class="block px-4 py-2 hover:text-white hover:bg-emerald-600">{{ $menu['label'] }}</a>
+                                        class="block px-4 py-2 hover:bg-emerald-600 hover:text-white }}">{{ $menu['label'] }}</a>
                                 @endif
                             @endforeach
                         </div>
                     </aside>
+                    {{-- mobile sidebar --}}
+                    <div :class="openAside ? 'opacity-100 visible' : 'opacity-0 invisible'"
+                        class="flex lg:hidden fixed inset-0 top-16 bg-black/50 !z-50 transition-all duration-300"
+                        x-on:click="openAside = false">
+                        <aside x-on:click="(e) => e.stopPropagation()"
+                            :class="openAside ? 'translate-x-0' : '-translate-x-full'"
+                            class="py-4 bg-white/90 w-56 transition-all duration-200">
+                            <div>
+                                @foreach (config('common.header.menuadmin') as $menu)
+                                    @if (Auth::user()->role === 'admin' || (Auth::user()->role === 'editor' && $menu['route'] !== 'users'))
+                                        <a href="{{ route($menu['route']) }}"
+                                            class="block px-4 py-2 hover:text-white hover:bg-emerald-600">{{ $menu['label'] }}</a>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </aside>
+                    </div>
                 </div>
-            </div>
+            @endif
+
             <div class="h-full w-full grow p-0 lg:p-4 py-4 border-l-none lg:border-l">
                 <div class="flex gap-2 mb-4 items-center">
-                    <button type="button" x-on:click="openAside = !openAside" class="lg:hidden">
-                        <x-heroicon-m-bars-3 class="w-6" />
-                    </button>
+                    @if (Auth::user()->role !== 'user')
+                        <button type="button" x-on:click="openAside = !openAside" class="lg:hidden">
+                            <x-heroicon-m-bars-3 class="w-6" />
+                        </button>
+                    @endif
                     <h2 class="title !mb-0">{{ $title }}</h2>
                 </div>
                 <div class="w-full">

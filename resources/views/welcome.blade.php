@@ -47,12 +47,20 @@
                     <h3 class="title-accent">{{ config('common.home.speech.principal-name') }}</h3>
                 </div>
                 <div class="">
-                    {{-- <img src="{{ asset('storage/images/kepala-sekolah-ni.webp') }}" alt="kepala sekolah"
-                        class="float-left w-40 mt-2 mr-4 mb-4 rounded-lg"> --}}
+                    {{-- <img src="{{ asset('storage/images/nis-kepala-madrasah-a.jpg') }}"
+                        alt="Kepala MA Nurul Iman Sindangkerta" loading="lazy"
+                        class="float-left w-40 mt-2 mr-4 mb-4 rounded-lg shadow-md"> --}}
+                    <img src="{{ asset('storage/images/nis-kepala-madrasah-a.jpg') }}"
+                        alt="Kepala MA Nurul Iman Sindangkerta" loading="lazy"
+                        class="float-left w-40 lg:w-56 mt-2 mr-4 mb-4 rounded-lg shadow-md brightness-150">
                     <div class="">
-                        @foreach (config('common.home.speech.speech') as $paragraph)
+                        <p class="mb-2 text-gray-500 font-semibold italic">Assalamualaikum Warahmatullahi Wabarakatuh
+                        </p>
+                        @foreach (array_slice(config('common.home.speech.speech'), 0, 3) as $paragraph)
                             <p class="mb-2 text-gray-500">{{ $paragraph }}</p>
                         @endforeach
+                        <a href="{{ route('sambutan') }}"
+                            class="font-semibold text-amber-700 mt-4 inline-block">Selengkapnya</a>
                     </div>
                 </div>
             </article>

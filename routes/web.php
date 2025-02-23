@@ -8,6 +8,7 @@ use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::view('/sambutan', 'pages.profile.sambutan')->name('sambutan');
 Route::view('/guru-staff', 'pages.profile.guru-staff')->name('guru-staff');
 Route::view('/sejarah', 'pages.profile.sejarah')->name('sejarah');
 Route::view('/visi-misi-tujuan', 'pages.profile.visi-misi-tujuan')->name('visi-misi-tujuan');
+Route::view('/mars-hymne', 'pages.profile.mars-hymne')->name('mars-hymne');
 
 // Publikasi
 Route::get('/berita', [PublicController::class, 'berita'])->name('berita');
@@ -47,17 +49,20 @@ Route::middleware('guest')->group(function () {
     Route::post('/reset-password', [ResetPasswordController::class, 'passwordUpdate'])->name('password.update');
 });
 
+
 // Route::middleware(['auth', RoleMiddleware::class . ':admin,editor,user'])->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('verified')->name('dashboard');
-    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::patch('/me', [UserController::class, 'updateMe'])->name('update-me');
 
     Route::middleware(RoleMiddleware::class . ':admin')->group(function () {
-        Route::get('/users', [AuthController::class, 'users'])->name('users');
-        Route::patch('/users/{user}', [AuthController::class, 'changeRole'])->name('change-role');
+        Route::get('/users', [UserController::class, 'users'])->name('users');
+        Route::patch('/users', [UserController::class, 'changeRole'])->name('change-role');
+        Route::delete('/users', [UserController::class, 'deleteUser'])->name('users.destroy');
     });
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/wrong-email-register', [AuthController::class, 'wrongEmailRegister'])->name('wrong-email-register');
 
     // email verification notice route
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');

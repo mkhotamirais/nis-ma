@@ -1,8 +1,6 @@
 @props([
-    'meta' => [
-        'title' => config('meta.home.title'),
-        'description' => config('meta.home.description'),
-    ],
+    'title' => config('meta.home.title'),
+    'description' => config('meta.home.description'),
 ])
 
 <!DOCTYPE html>
@@ -13,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{{ $meta['title'] ?? 'MA Nurul Iman Sindangkerta' }}</title>
-    <meta name="description" content="{{ $meta['description'] ?? 'MA Nurul Iman Sindangkerta Description' }}">
+    <title>{{ $title ?? 'MA Nurul Iman Sindangkerta' }}</title>
+    <meta name="description" content="{{ $description ?? 'MA Nurul Iman Sindangkerta Description' }}">
 
     <link rel="shortcut icon" href="{{ asset('storage/logo/favicon.ico') }}" type="image/x-icon">
 
@@ -58,7 +56,7 @@
                                         <div class="flex flex-col">
                                             @foreach ($menu['submenu'] as $submenu)
                                                 <a href="{{ $submenu['href'] }}"
-                                                    class="py-2 block hover:text-amber-300 transition capitalize text-white min-w-max">{{ $submenu['label'] }}</a>
+                                                    class="py-2 block hover:text-amber-300 transition text-white min-w-max">{{ $submenu['label'] }}</a>
                                             @endforeach
                                         </div>
                                     </div>

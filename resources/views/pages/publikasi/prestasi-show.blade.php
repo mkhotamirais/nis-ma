@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="$achievement->title" :description="config('meta.prestasi.description')">
     <section class="section">
         <div class="container">
             <div class="flex flex-col lg:flex-row gap-14 items-start">

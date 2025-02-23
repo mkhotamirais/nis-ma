@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="$news->title" :description="config('meta.berita.description')">
     <section class="section">
         <div class="container">
             <div class="flex flex-col lg:flex-row gap-14 items-start">

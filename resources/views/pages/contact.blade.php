@@ -1,7 +1,7 @@
-<x-layout>
+<x-layout :title="config('meta.contact.title')" :description="config('meta.contact.description')">
     <section class="section-hero">
         <div class="container">
-            <h1 class="title">Hubungi Kami</h1>
+            <h1 class="title !text-white">Hubungi Kami</h1>
         </div>
     </section>
     <section class="section">
