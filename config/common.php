@@ -50,7 +50,8 @@ return [
         ],
     ],
     "common" => [
-        "moto" => "Moto Sekolah Nurul Iman",
+        "moto" => "Lembur ilmu, Majelis disiplin, Kancah ibada dan Wahana perjuangan",
+        "moto2" => "Nurul Iman tempat orang baik dan orang orang yang ingn menjadi baik",
         "address" => "Kp. Bangong Rt 02/01, Desa Pasirpogor, Kec. Sindangkerta, Kab. Bandung Barat, Jawa Barat, 40563",
         "foundation-name" => "Yayasan Pendidikan H. Abdul Halim H. Abdul Salam",
         "links" => [
@@ -67,7 +68,6 @@ return [
     "home" => [
         "hero" => [
             "welcome" => "Selamat Datang di MA Nurul Iman Sindangkerta",
-            "moto" => "Moto Sekolah Nurul Iman",
             "register-btn" => "Pendaftaran",
             "about-btn" => "Tentang Sekolah",
         ],

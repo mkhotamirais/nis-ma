@@ -1,18 +1,18 @@
 <x-layout>
     {{-- hero --}}
-    <section class="h-[75vh] relative w-full bg-gradient-to-b from-black/10 to-black/20">
+    <section class="h-[76vh] relative w-full bg-black/40">
         {{-- <img src="{{ asset('storage/images/pexels-school-hero.jpg') }}" alt="hero image"
-            class="h-[75vh] absolute w-full object-cover object-center -z-10"> --}}
-        {{-- <img src="{{ asset('storage/images/nis-hero-drone-blur.jpg') }}" alt="hero image"
-            class="h-[75vh] absolute w-full object-cover object-center -z-10"> --}}
-        <img src="{{ asset('storage/images/nis-hero2.jpg') }}" alt="hero image"
-            class="h-[75vh] absolute w-full object-cover object-center -z-10">
+            class="h-[76vh] absolute w-full object-cover object-center -z-10"> --}}
+        <img src="{{ asset('storage/images/nis-hero-drone-blur.jpg') }}" alt="hero image"
+            class="h-[76vh] absolute w-full object-cover object-center -z-10">
+        {{-- <img src="{{ asset('storage/images/nis-hero-3.png') }}" alt="hero image"
+            class="h-[76vh] absolute w-full object-cover object-center -z-10"> --}}
         <div class="container flex items-center h-full">
             <div class="max-w-5xl">
                 <div class="mb-8">
                     <h1 class="text-4xl lg:text-5xl font-bold text-white mb-2">{{ config('common.home.hero.welcome') }}
                     </h1>
-                    <p class="text-xl lg:text-2xl text-white italic">{{ config('common.home.hero.moto') }}</p>
+                    <q class="text-xl lg:text-2xl text-white italic">{{ config('common.common.moto') }}</q>
                 </div>
                 <div class="flex flex-col md:flex-row gap-4 w-fit text-center">
                     <a href="{{ route('ppdb') }}"
@@ -56,6 +56,8 @@
                     <div class="">
                         <p class="mb-2 text-gray-500 font-semibold italic">Assalamualaikum Warahmatullahi Wabarakatuh
                         </p>
+                        <p class="mb-2 text-emerald-700 italic"><q>{{ config('common.common.moto2') }}</q></p>
+
                         @foreach (array_slice(config('common.home.speech.speech'), 0, 3) as $paragraph)
                             <p class="mb-2 text-gray-500">{{ $paragraph }}</p>
                         @endforeach
