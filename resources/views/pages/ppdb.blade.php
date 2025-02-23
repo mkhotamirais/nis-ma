@@ -11,7 +11,7 @@
 
                 <a href="/storage/images/nis-brosur-terkini.jpg">
                     <img src="{{ asset('storage/images/nis-brosur-terkini.jpg') }}"
-                        alt="Kepala MA Nurul Iman Sindangkerta" loading="lazy" class="rounded-md">
+                        alt="Brosur PPDB MA Nurul Iman Sindangkerta" loading="lazy" class="rounded-md">
                 </a>
                 {{-- <ul>
                     <li>Pas foto latar merah ukuran 2x3 dua buah | 3x4 dua buah | 4x6 dua buah</li>
