@@ -50,7 +50,7 @@ return [
         ],
     ],
     "common" => [
-        "moto" => "Lembur ilmu, Majelis disiplin, Kancah ibada dan Wahana perjuangan",
+        "moto" => "Lembur ilmu, Majelis disiplin, Kancah ibadah dan Wahana perjuangan",
         "moto2" => "Nurul Iman tempat orang baik dan orang orang yang ingn menjadi baik",
         "address" => "Kp. Bangong Rt 02/01, Desa Pasirpogor, Kec. Sindangkerta, Kab. Bandung Barat, Jawa Barat, 40563",
         "foundation-name" => "Yayasan Pendidikan H. Abdul Halim H. Abdul Salam",
