@@ -10,7 +10,7 @@ class NewsPolicy
 {
     public function modify(User $user, News $news)
     {
-        return $user->id === $news->user_id;
+        return $user->id === $news->user_id || $user->role === 'admin';
     }
     // /**
     //  * Determine whether the user can view any models.

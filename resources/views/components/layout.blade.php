@@ -43,7 +43,7 @@
                         @foreach (config('common.header.menu') as $menu)
                             <div class="relative group">
                                 <a href="{{ $menu['href'] }}"
-                                    class="hover:text-amber-300 transition capitalize px-4 text-white flex items-center gap-2 h-16">
+                                    class="hover:text-amber-700 transition capitalize px-4 text-white flex items-center gap-2 h-16">
                                     <span>{{ $menu['label'] }}</span>
                                     @if (isset($menu['submenu']))
                                         <x-heroicon-o-chevron-down

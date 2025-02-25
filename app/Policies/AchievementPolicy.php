@@ -10,7 +10,7 @@ class AchievementPolicy
 {
     public function modify(User $user, Achievement $achievement)
     {
-        return $user->id === $achievement->user_id;
+        return $user->id === $achievement->user_id || $user->role === 'admin';
     }
     // /**
     //  * Determine whether the user can view any models.

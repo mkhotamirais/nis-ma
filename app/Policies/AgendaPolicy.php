@@ -10,7 +10,7 @@ class AgendaPolicy
 {
     public function modify(User $user, Agenda $agenda)
     {
-        return $user->id === $agenda->user_id;
+        return $user->id === $agenda->user_id || $user->role === 'admin';
     }
     // /**
     //  * Determine whether the user can view any models.
