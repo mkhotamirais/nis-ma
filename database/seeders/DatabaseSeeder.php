@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'name' => 'mkhotamirais',
-            'email' => 'mkhotamirais@gmail.com',
-            'password' => Hash::make('mkhotamirais'),
+            'name' => 'ma nurul iman',
+            'email' => 'admin@ma.nuruliman-sindangkerta.sch.id',
+            'password' => Hash::make('adminmanuruliman2025'),
             'role' => 'admin',
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
