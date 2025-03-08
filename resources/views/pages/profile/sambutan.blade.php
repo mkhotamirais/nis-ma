@@ -19,6 +19,7 @@
                 @foreach (config('common.home.speech.speech') as $paragraph)
                     <p class="mb-2 text-gray-500">{{ $paragraph }}</p>
                 @endforeach
+                <p><i>Wallahul muwaffiq ila aqwamit tharieq, Wssalamualaikum Warahmatullahi Wabarakatuh</i></p>
             </div>
         </div>
     </section>
