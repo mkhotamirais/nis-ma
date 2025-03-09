@@ -61,7 +61,7 @@
                         x-on:click="openAside = false">
                         <aside x-on:click="(e) => e.stopPropagation()"
                             :class="openAside ? 'translate-x-0' : '-translate-x-full'"
-                            class="py-4 bg-white/90 w-56 transition-all duration-200">
+                            class="py-4 bg-white w-56 transition-all duration-200">
                             <div>
                                 @foreach (config('common.header.menuadmin') as $menu)
                                     @if (Auth::user()->role === 'admin' || (Auth::user()->role === 'editor' && $menu['route'] !== 'users'))

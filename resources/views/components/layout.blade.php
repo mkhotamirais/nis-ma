@@ -79,7 +79,7 @@
                         class="fixed inset-0 bg-black/50 transition-all duration-500">
                         <nav x-on:click="(e) => e.stopPropagation()"
                             :class="open ? 'translate-x-0' : '-translate-x-full'"
-                            class="overflow-y-scroll w-[85%] sm:w-80 h-full bg-emerald-700/85 border-r border-emerald-800 transition-all duration-300 p-8">
+                            class="overflow-y-scroll w-[85%] sm:w-80 h-full bg-emerald-700 border-r border-emerald-800 transition-all duration-300 p-8">
                             <x-logo />
                             <br>
                             <hr>

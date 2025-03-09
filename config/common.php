@@ -62,7 +62,7 @@ return [
             "instagram-osis-ma" => ["label" => "osis.ma.nuruliman", "href" => "https://www.instagram.com/osis.ma.nuruliman"],
             "instagram-pramuka-ma" => ["label" => "pramuka.manis", "href" => "https://www.instagram.com/pramuka.manis/"],
             "wa-url-m-nur" => ["label" => "081809299580", "href" => "https://wa.me/6281809299580"],
-            "email-url" => ["label" => "nuruliman@gmail.com", "href" => "https://mailto:nuruliman@gmail.com"]
+            "email-url" => ["label" => "admin@ma.nuruliman-sindangkerta.sch.id", "href" => "https://mailto:admin@ma.nuruliman-sindangkerta.sch.id"]
         ],
     ],
     "home" => [

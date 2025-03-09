@@ -1,4 +1,4 @@
-<x-layout :title="$news->title" :description="config('meta.berita.description')">
+<x-layout :title="Str::words($news->title, 8)" description="{!! Str::words(strip_tags(html_entity_decode($news->content)), 25, '...') !!}">
     <section class="section">
         <div class="container">
             <div class="flex flex-col lg:flex-row gap-14 items-start">
