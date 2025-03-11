@@ -56,7 +56,7 @@
                         @foreach (config('common.header.menu') as $menu)
                             <div class="relative group">
                                 <a href="{{ $menu['href'] }}"
-                                    class="hover:text-amber-700 transition capitalize px-4 text-white flex items-center gap-2 h-16">
+                                    class="hover:text-amber-300 transition capitalize px-4 text-white flex items-center gap-2 h-16">
                                     <span>{{ $menu['label'] }}</span>
                                     @if (isset($menu['submenu']))
                                         <x-heroicon-o-chevron-down
@@ -170,8 +170,7 @@
                     <div>
                         <p><b>Telepon</b> : {{ config('common.common.links.wa-url-m-nur.label') }}</p>
                         <p><b>Email</b> : {{ config('common.common.links.email-url.label') }}</p>
-                        <p class="mb-4"><b>Website</b> : {{ config('common.common.links.website-ma.label') }}</p>
-                        <div><x-socials /></div>
+                        <div class="mt-4"><x-socials /></div>
                     </div>
                 </div>
             </div>

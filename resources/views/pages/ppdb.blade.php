@@ -7,7 +7,8 @@
     <section class="section">
         <div class="container">
             <div>
-                <a href="https://bit.ly/PPDBNI2025" type="button" class="btn mb-4 inline-block">Daftar Sekarang</a>
+                <a href="{{ config('common.common.links.ppdb') }}" type="button" class="btn mb-4 inline-block">Daftar
+                    Sekarang</a>
 
                 <a href="/storage/images/nis-brosur-terkini.jpg">
                     <img src="{{ asset('storage/images/nis-brosur-terkini.jpg') }}"

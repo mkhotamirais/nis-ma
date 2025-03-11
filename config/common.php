@@ -31,22 +31,22 @@ return [
                     ["href" => "/prestasi", "label" => "Prestasi"],
                     ["href" => "/agenda", "label" => "Agenda"],
                     ["href" => "/berita", "label" => "Berita"],
-                    ["href" => "/galery", "label" => "Galery"],
+                    ["href" => "/galery", "label" => "Fasilitas & Galery"],
                 ]
             ]
         ]
     ],
     "footer" => [
         "links" => [
-            ["href" => "#", "label" => "PPDB"],
-            ["href" => "#", "label" => "Tentang Sekolah"],
-            ["href" => "#", "label" => "Hubungi Kami"],
+            ["href" => "/ppdb", "label" => "PPDB"],
+            ["href" => "/sejarah", "label" => "Tentang Sekolah"],
+            ["href" => "/prestasi", "label" => "Prestasi"],
+            ["href" => "/berita", "label" => "Berita"],
         ],
         "other-links" => [
-            ["href" => "#", "label" => "Ponpes Nurul Iman"],
+            ["href" => "https://ponpes.nuruliman-sindangkerta.sch.id", "label" => "Ponpes Nurul Iman"],
             ["href" => "#", "label" => "RA Nurul Iman"],
             ["href" => "#", "label" => "MTS Nurul Iman"],
-            ["href" => "#", "label" => "MA Nurul Iman"],
         ],
     ],
     "common" => [
@@ -62,7 +62,9 @@ return [
             "instagram-osis-ma" => ["label" => "osis.ma.nuruliman", "href" => "https://www.instagram.com/osis.ma.nuruliman"],
             "instagram-pramuka-ma" => ["label" => "pramuka.manis", "href" => "https://www.instagram.com/pramuka.manis/"],
             "wa-url-m-nur" => ["label" => "081809299580", "href" => "https://wa.me/6281809299580"],
-            "email-url" => ["label" => "admin@ma.nuruliman-sindangkerta.sch.id", "href" => "https://mailto:admin@ma.nuruliman-sindangkerta.sch.id"]
+            "email-url" => ["label" => "admin@ma.nuruliman-sindangkerta.sch.id", "href" => "https://mailto:admin@ma.nuruliman-sindangkerta.sch.id"],
+            "ppdb" => "https://docs.google.com/forms/d/e/1FAIpQLSf8uTlMAxlvO3w49gmxFcTUY6TVIl14nEhitsUs_E8mWtsPCQ/viewform",
+            "ppdb2" => "https://bit.ly/PPDBNI2025",
         ],
     ],
     "home" => [
@@ -100,7 +102,7 @@ return [
             ]
         ],
         "galery" => [
-            "title" => "Galery",
+            "title" => "Fasilitas & Galery",
             "description" => "Koleksi foto yang mengabadikan momen berharga, kegiatan, prestasi, serta fasilitas sekolah dalam tampilan menarik dan penuh makna."
         ],
         "news" => [
